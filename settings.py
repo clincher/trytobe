@@ -1,15 +1,10 @@
 # Django settings for trytobe project.
 import os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-
-MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
@@ -22,27 +17,10 @@ DATABASES = {
     }
 }
 APPEND_SLASH = False
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
 TIME_ZONE = 'Europe/Moscow'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'ru-ru'
-
 SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
 USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
 USE_L10N = True
 
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
@@ -56,8 +34,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'templates/static'),
 )
 
-# List of finder classes that know how to find static files in
-# various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -78,6 +54,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #    'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
+    'order.context_processors.order_form',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,12 +79,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
     'django.contrib.flatpages',
-#    'trytobe.order',
+    'order',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -132,3 +107,5 @@ LOGGING = {
         },
     }
 }
+
+from local_settings import *
