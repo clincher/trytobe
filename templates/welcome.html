@@ -5,19 +5,10 @@
     <title>{{ flatpage.title }}</title>
     <style>
         html {background: #ece1c7; overflow-y: scroll;}
-        .w1 {width: 100%; float: left;}
-        .w2 {left: 50%; float: left; position: relative; width: 980px;}
-        .w3 {left: -50%; float: left; position: absolute; width: 980px;}
-        img {position: relative; margin: 0 auto; float: left;}
+        body {width: 99%; text-align: center;}
     </style>
 </head>
 <body>
-<div class="w1">
-    <div class="w2">
-        <div class="w3">
-            <img src="{{ STATIC_URL }}images/trytobe.png"/>
-        </div>
-    </div>
-</div>
+    <img src="{{ STATIC_URL }}images/trytobe.png"/>
 </body>
 </html>
