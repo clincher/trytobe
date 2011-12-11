@@ -6,6 +6,7 @@ from order.signals import order_notifying
 
 class CreateOrderView(CreateView):
     form_class = OrderForm
+    template_name = 'order/order_create.html'
 
     def get_success_url(self):
         return '/success/'
